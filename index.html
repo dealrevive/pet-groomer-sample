@@ -14,11 +14,26 @@
             color: #333;
         }
         .hero-background {
-            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1600x800/60A5FA/FFFFFF?text=Happy+Dog+Grooming'); /* Placeholder image, replace with a real one */
+            /* This will be replaced by the inline style in the HTML header for the background image */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             position: relative;
+        }
+        /* Overlay for text readability on the hero background image */
+        .hero-background::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+            z-index: 1; /* Place the overlay above the image but below the content */
+        }
+        .hero-content {
+            position: relative;
+            z-index: 10; /* Ensures content is above the background and overlay */
         }
         .gradient-button {
             background-image: linear-gradient(to right, #6D28D9 0%, #8B5CF6 100%); /* Purple gradient */
@@ -42,9 +57,13 @@
 </head>
 <body>
 
+    <!-- Navbar -->
     <nav class="bg-white shadow-sm py-4 sticky top-0 z-50">
         <div class="container mx-auto px-4 flex justify-between items-center">
-            <a href="#home" class="text-2xl font-bold text-gray-800">Pawsitively Pampered</a>
+            <!-- Custom Logo Placeholder -->
+            <a href="#home" class="rounded-md p-1 hover:bg-gray-50 transition-colors">
+                <img src="https://placehold.co/150x60/8B5CF6/FFFFFF?text=Paws+Logo" alt="Pawsitively Pampered Logo" class="h-16 w-auto">
+            </a>
             <ul class="hidden md:flex space-x-8">
                 <li><a href="#services" class="text-lg text-gray-600 hover:text-purple-700 font-medium transition-colors">Services</a></li>
                 <li><a href="#about" class="text-lg text-gray-600 hover:text-purple-700 font-medium transition-colors">About Us</a></li>
@@ -72,8 +91,10 @@
         </div>
     </nav>
 
-    <header id="home" class="hero-background text-white py-20 md:py-32 text-center rounded-b-3xl shadow-lg">
-        <div class="container mx-auto px-4">
+    <!-- Hero Section with Background Image -->
+    <header id="home" class="hero-background text-white py-20 md:py-32 text-center rounded-b-3xl shadow-lg"
+        style="background-image: url('https://placehold.co/1600x800/6A0DAD/FFFFFF?text=Happy+Pet+Grooming+Background');">
+        <div class="container mx-auto px-4 hero-content">
             <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 animate-fade-in-down">
                 Pawsitively Pampered <br> Where Every Pet is a VIP
             </h1>
@@ -87,26 +108,27 @@
         </div>
     </header>
 
+    <!-- Services Section -->
     <section id="services" class="py-16 md:py-24 bg-white">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">Our Grooming Services</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-gray-50 p-8 rounded-xl shadow-md text-center transform hover:scale-105 transition duration-300">
-                    <img src="happydog.png" alt="Dog Grooming" class="mx-auto w-32 h-32 rounded-full mb-6">
+                    <img src="https://placehold.co/150x150/9CA3AF/FFFFFF?text=Dog+Grooming" alt="Dog Grooming" class="mx-auto w-32 h-32 rounded-full mb-6">
                     <h3 class="text-2xl font-semibold mb-4 text-gray-800">Full Dog Grooming</h3>
                     <p class="text-gray-600">
                         Includes bath, blow-dry, brush-out, haircut, nail trim, ear cleaning, and paw pad trim. Tailored to your dog's breed and needs.
                     </p>
                 </div>
                 <div class="bg-gray-50 p-8 rounded-xl shadow-md text-center transform hover:scale-105 transition duration-300">
-                    <img src="cat.png" alt="Cat Grooming" class="mx-auto w-32 h-32 rounded-full mb-6">
+                    <img src="https://placehold.co/150x150/9CA3AF/FFFFFF?text=Cat+Grooming" alt="Cat Grooming" class="mx-auto w-32 h-32 rounded-full mb-6">
                     <h3 class="text-2xl font-semibold mb-4 text-gray-800">Gentle Cat Grooming</h3>
                     <p class="text-gray-600">
                         Stress-free bathing, brushing, mat removal, lion cuts, and nail trims for our feline friends. Patient and calm approach guaranteed.
                     </p>
                 </div>
                 <div class="bg-gray-50 p-8 rounded-xl shadow-md text-center transform hover:scale-105 transition duration-300">
-                    <img src="brush.png" alt="Bath & Brush" class="mx-auto w-32 h-32 rounded-full mb-6">
+                    <img src="https://placehold.co/150x150/9CA3AF/FFFFFF?text=Bath+%26+Brush" alt="Bath & Brush" class="mx-auto w-32 h-32 rounded-full mb-6">
                     <h3 class="text-2xl font-semibold mb-4 text-gray-800">Bath & Brush Package</h3>
                     <p class="text-gray-600">
                         Perfect for in-between full grooms! Includes deep cleansing shampoo, conditioning, thorough blow-dry, and de-shedding brush.
@@ -116,10 +138,11 @@
         </div>
     </section>
 
+    <!-- About Us Section -->
     <section id="about" class="py-16 md:py-24 bg-gray-100">
         <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
             <div class="md:w-1/2">
-                <img src="petgroomer.png" alt="Happy Pet" class="rounded-xl shadow-lg w-full h-auto">
+                <img src="https://placehold.co/800x600/9CA3AF/FFFFFF?text=Happy+Pet" alt="Happy Pet" class="rounded-xl shadow-lg w-full h-auto">
             </div>
             <div class="md:w-1/2 text-center md:text-left">
                 <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">About Pawsitively Pampered</h2>
@@ -133,6 +156,7 @@
         </div>
     </section>
 
+    <!-- Pricing Section (Simple example, adjust as needed) -->
     <section id="pricing" class="py-16 md:py-24 bg-white">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-12 text-gray-900">Transparent Pricing</h2>
@@ -176,29 +200,34 @@
         </div>
     </section>
 
+    <!-- Call to Action / Contact Section -->
     <section id="contact" class="bg-purple-700 text-white py-16 md:py-24 text-center rounded-t-3xl shadow-lg">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-5xl font-bold mb-6">Ready to Pamper Your Pet?</h2>
-            <p class="text-xl md:text-2xl mb-10 opacity-90">
+            <p class="text-xl md:text-2xl mb-6 opacity-90">
                 Book a convenient grooming appointment online. We look forward to meeting you and your furry friend!
             </p>
+
+            <div class="mb-8">
+                <p class="text-lg">Call Us: <a href="tel:+15551234567" class="text-white hover:text-purple-200 transition-colors">+1 (555) 123-4567</a></p>
+                <p class="text-lg">Email Us: <a href="mailto:info@pawspamper.com" class="text-white hover:text-purple-200 transition-colors">info@pawspamper.com</a></p>
+            </div>
+
             <div class="calendly-container">
                 <div class="calendly-inline-widget" data-url="https://calendly.com/dealrevive" style="min-width:320px;height:700px;"></div>
                 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
             </div>
-            <p class="text-md mt-8">
-                <a href="tel:[YOUR_PHONE_NUMBER]" class="text-white hover:text-purple-200 transition-colors">Call Us: [Your Phone Number]</a><br>
-                <a href="mailto:[YOUR_EMAIL_ADDRESS]" class="text-white hover:text-purple-200 transition-colors">Email: [Your Email Address]</a>
-            </p>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8 mt-0">
         <div class="container mx-auto px-4 text-center">
             <p>&copy; 2025 Pawsitively Pampered. All rights reserved. [Your City, State]</p>
         </div>
     </footer>
 
+    <!-- Mobile Menu Script -->
     <script>
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const closeMobileMenuButton = document.getElementById('close-mobile-menu');
