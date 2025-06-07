@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawsitively Pampered - Professional Pet Grooming</title>
+    <meta name="description" content="Professional pet grooming services in [Your City]. One-time cost, no monthly fees website example.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light gray background */
+            color: #333;
+        }
+        .hero-background {
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1600x800/60A5FA/FFFFFF?text=Happy+Dog+Grooming'); /* Placeholder image, replace with a real one */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        .gradient-button {
+            background-image: linear-gradient(to right, #6D28D9 0%, #8B5CF6 100%); /* Purple gradient */
+            transition: all 0.3s ease;
+            background-size: 200% auto;
+        }
+        .gradient-button:hover {
+            background-position: right center;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .calendly-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="bg-white shadow-sm py-4 sticky top-0 z-50">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold text-gray-800">Pawsitively Pampered</a>
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="#services" class="text-lg text-gray-600 hover:text-purple-700 font-medium transition-colors">Services</a></li>
+                <li><a href="#about" class="text-lg text-gray-600 hover:text-purple-700 font-medium transition-colors">About Us</a></li>
+                <li><a href="#pricing" class="text-lg text-gray-600 hover:text-purple-700 font-medium transition-colors">Pricing</a></li>
+                <li><a href="#contact" class="text-lg text-gray-600 hover:text-purple-700 font-medium transition-colors">Book Now</a></li>
+            </ul>
+            <button id="mobile-menu-button" class="md:hidden p-2 text-gray-600 hover:text-purple-700 focus:outline-none">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-white z-50 flex flex-col items-center justify-center p-8">
+            <button id="close-mobile-menu" class="absolute top-4 right-4 p-2 text-gray-600 hover:text-purple-700 focus:outline-none">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <ul class="flex flex-col space-y-6 text-center">
+                <li><a href="#services" class="text-2xl text-gray-800 hover:text-purple-700 font-medium transition-colors mobile-link">Services</a></li>
+                <li><a href="#about" class="text-2xl text-gray-800 hover:text-purple-700 font-medium transition-colors mobile-link">About Us</a></li>
+                <li><a href="#pricing" class="text-2xl text-gray-800 hover:text-purple-700 font-medium transition-colors mobile-link">Pricing</a></li>
+                <li><a href="#contact" class="text-2xl text-gray-800 hover:text-purple-700 font-medium transition-colors mobile-link">Book Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="home" class="hero-background text-white py-20 md:py-32 text-center rounded-b-3xl shadow-lg">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 animate-fade-in-down">
+                Pawsitively Pampered <br> Where Every Pet is a VIP
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-90 animate-fade-in-up">
+                Professional, gentle, and loving grooming services for dogs and cats of all breeds.
+                Serving [Your City] with a passion for pets.
+            </p>
+            <a href="#contact" class="gradient-button text-white font-semibold text-lg px-10 py-4 rounded-full shadow-lg hover:scale-105 transition transform duration-300">
+                Book an Appointment Now
+            </a>
+        </div>
+    </header>
+
+    <section id="services" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">Our Grooming Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md text-center transform hover:scale-105 transition duration-300">
+                    <img src="https://via.placeholder.com/150/9CA3AF/FFFFFF?text=Dog+Grooming" alt="Dog Grooming" class="mx-auto w-32 h-32 rounded-full mb-6">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Full Dog Grooming</h3>
+                    <p class="text-gray-600">
+                        Includes bath, blow-dry, brush-out, haircut, nail trim, ear cleaning, and paw pad trim. Tailored to your dog's breed and needs.
+                    </p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md text-center transform hover:scale-105 transition duration-300">
+                    <img src="https://via.placeholder.com/150/9CA3AF/FFFFFF?text=Cat+Grooming" alt="Cat Grooming" class="mx-auto w-32 h-32 rounded-full mb-6">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Gentle Cat Grooming</h3>
+                    <p class="text-gray-600">
+                        Stress-free bathing, brushing, mat removal, lion cuts, and nail trims for our feline friends. Patient and calm approach guaranteed.
+                    </p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md text-center transform hover:scale-105 transition duration-300">
+                    <img src="https://via.placeholder.com/150/9CA3AF/FFFFFF?text=Bath+%26+Brush" alt="Bath & Brush" class="mx-auto w-32 h-32 rounded-full mb-6">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Bath & Brush Package</h3>
+                    <p class="text-gray-600">
+                        Perfect for in-between full grooms! Includes deep cleansing shampoo, conditioning, thorough blow-dry, and de-shedding brush.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-16 md:py-24 bg-gray-100">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+                <img src="https://via.placeholder.com/800x600/9CA3AF/FFFFFF?text=Happy+Pet" alt="Happy Pet" class="rounded-xl shadow-lg w-full h-auto">
+            </div>
+            <div class="md:w-1/2 text-center md:text-left">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">About Pawsitively Pampered</h2>
+                <p class="text-lg text-gray-700 mb-4">
+                    At Pawsitively Pampered, we treat every pet with the love and respect they deserve. Our experienced groomers use only high-quality, pet-safe products and gentle techniques to ensure a comfortable and enjoyable grooming experience.
+                </p>
+                <p class="text-lg text-gray-700">
+                    We believe in building lasting relationships with our furry clients and their owners, providing personalized care that meets the unique needs of each animal. Your pet's well-being and happiness are our top priorities!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-gray-900">Transparent Pricing</h2>
+            <p class="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
+                Our prices vary based on breed, size, coat condition, and specific services requested. Here's a general guide:
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md transform hover:scale-105 transition duration-300">
+                    <h3 class="text-2xl font-semibold mb-4 text-purple-700">Small Dogs</h3>
+                    <p class="text-4xl font-bold text-gray-900 mb-4">Starting at $65</p>
+                    <ul class="text-gray-600 list-disc list-inside text-left mx-auto max-w-[200px]">
+                        <li>Full Groom / Bath & Brush</li>
+                        <li>Nail Trim</li>
+                        <li>Ear Cleaning</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md transform hover:scale-105 transition duration-300">
+                    <h3 class="text-2xl font-semibold mb-4 text-purple-700">Medium Dogs</h3>
+                    <p class="text-4xl font-bold text-gray-900 mb-4">Starting at $85</p>
+                    <ul class="text-gray-600 list-disc list-inside text-left mx-auto max-w-[200px]">
+                        <li>Full Groom / Bath & Brush</li>
+                        <li>Nail Trim & File</li>
+                        <li>Ear Cleaning</li>
+                        <li>Paw Pad Trim</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md transform hover:scale-105 transition duration-300">
+                    <h3 class="text-2xl font-semibold mb-4 text-purple-700">Large Dogs & Cats</h3>
+                    <p class="text-4xl font-bold text-gray-900 mb-4">Starting at $100</p>
+                    <ul class="text-gray-600 list-disc list-inside text-left mx-auto max-w-[200px]">
+                        <li>Full Groom / Bath & Brush</li>
+                        <li>Nail Trim & File</li>
+                        <li>Ear Cleaning & Plucking</li>
+                        <li>Anal Gland Expression</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="text-sm text-gray-500 mt-8">
+                *Prices are estimates. Final price determined after assessment of pet's coat condition and temperament.
+            </p>
+        </div>
+    </section>
+
+    <section id="contact" class="bg-purple-700 text-white py-16 md:py-24 text-center rounded-t-3xl shadow-lg">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-5xl font-bold mb-6">Ready to Pamper Your Pet?</h2>
+            <p class="text-xl md:text-2xl mb-10 opacity-90">
+                Book a convenient grooming appointment online. We look forward to meeting you and your furry friend!
+            </p>
+            <div class="calendly-container">
+                <div class="calendly-inline-widget" data-url="https://calendly.com/dealrevive" style="min-width:320px;height:700px;"></div>
+                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+            </div>
+            <p class="text-md mt-8">
+                <a href="tel:[YOUR_PHONE_NUMBER]" class="text-white hover:text-purple-200 transition-colors">Call Us: [Your Phone Number]</a><br>
+                <a href="mailto:[YOUR_EMAIL_ADDRESS]" class="text-white hover:text-purple-200 transition-colors">Email: [Your Email Address]</a>
+            </p>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white py-8 mt-0">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Pawsitively Pampered. All rights reserved. [Your City, State]</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            document.body.classList.toggle('overflow-hidden');
+        });
+
+        closeMobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+            });
+        });
+    </script>
+
+</body>
+</html>
