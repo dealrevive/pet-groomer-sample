@@ -1,378 +1,101 @@
-&lt;!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawsitively Pampered - Professional Pet Grooming</title>
+    <meta name="description" content="Professional pet grooming services in [Your City]. One-time cost, no monthly fees website example.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light gray background */
+            color: #333;
+        }
+        .hero-background {
+            /* Now using CSS for the background pattern */
+            background-size: 200px 200px; /* Adjust size of the pattern as needed */
+            background-position: center center;
+            background-repeat: repeat;
+            position: relative;
+            /* Using a repeating SVG pattern as background image */
+            background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3C!-- Background grid for subtle texture --%3E%3Crect x='0' y='0' width='200' height='200' fill='%236D28D9' opacity='0.05'/%3E%3C!-- Dog outline (simplified, no eyes) --%3E%3Cpath fill='%23FFFFFF' opacity='0.15' d='M100 50c-11.05 0-20 8.95-20 20v10c0 11.05 8.95 20 20 20s20-8.95 20-20V70c0-11.05-8.95-20-20-20zm-30 40c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10-4.48-10-10-10zm60 0c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10-4.48-10-10-10z'/%3E%3C!-- Cat outline (simplified, no eyes) --%3E%3Cpath fill='%23FFFFFF' opacity='0.15' d='M50 100c-11.05 0-20 8.95-20 20s8.95 20 20 20 20-8.95 20-20-8.95-20-20-20zm-20-20c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10-4.48-10-10-10zm60 0c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10-4.48-10-10-10z' transform='translate(50 50)'/%3E%3C/svg%3E");
+            background-color: #6D28D9; /* Primary background color for the hero */
+        }
+        /* Overlay for text readability on the hero background image */
+        .hero-background::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+            z-index: 1; /* Place the overlay above the image but below the content */
+        }
+        .hero-content {
+            position: relative;
+            z-index: 10; /* Ensures content is above the background and overlay */
+        }
+        .gradient-button {
+            background-image: linear-gradient(to right, #6D28D9 0%, #8B5CF6 100%); /* Purple gradient */
+            transition: all 0.3s ease;
+            background-size: 200% auto;
+        }
+        .gradient-button:hover {
+            background-position: right center;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .calendly-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body>
 
-&lt;html lang="en">
-&lt;head>
-&lt;meta charset="UTF-8">
-&lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
-&lt;title>Pawsitively Pampered - Professional Pet Grooming&lt;/title>
-&lt;meta name="description" content="Professional pet grooming services in [Your City]. One-time cost, no monthly fees website example.">
-&lt;script src="https://cdn.tailwindcss.com">&lt;/script>
-&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
-&lt;style>
-body {
-font-family: 'Inter', sans-serif;
-background-color: #f8fafc; /* Light gray background /
-color: #333;
-}
-.hero-background {
-/ Now using CSS for the background pattern /
-background-size: 200px 200px; / Adjust size of the pattern as needed /
-background-position: center center;
-background-repeat: repeat;
-position: relative;
-/ Using a repeating SVG pattern as background image /
-background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3C!-- Background grid for subtle texture --%3E%3Crect x='0' y='0' width='200' height='200' fill='%236D28D9' opacity='0.05'/%3E%3C!-- Dog outline (simplified, no eyes) --%3E%3Cpath fill='%23FFFFFF' opacity='0.15' d='M100 50c-11.05 0-20 8.95-20 20v10c0 11.05 8.95 20 20 20s20-8.95 20-20V70c0-11.05-8.95-20-20-20zm-30 40c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10-4.48-10-10-10zm60 0c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10-4.48-10-10-10z'/%3E%3C!-- Cat outline (simplified, no eyes) --%3E%3Cpath fill='%23FFFFFF' opacity='0.15' d='M50 100c-11.05 0-20 8.95-20 20s8.95 20 20 20 20-8.95 20-20-8.95-20-20-20zm-20-20c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10-4.48-10-10-10zm60 0c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10-4.48-10-10-10z' transform='translate(50 50)'/%3E%3C/svg%3E");
-background-color: #6D28D9; / Primary background color for the hero /
-}
-/ Overlay for text readability on the hero background image /
-.hero-background::before {
-content: "";
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background-color: rgba(0, 0, 0, 0.5); / Semi-transparent black overlay /
-z-index: 1; / Place the overlay above the image but below the content /
-}
-.hero-content {
-position: relative;
-z-index: 10; / Ensures content is above the background and overlay /
-}
-.gradient-button {
-background-image: linear-gradient(to right, #6D28D9 0%, #8B5CF6 100%); / Purple gradient */
-transition: all 0.3s ease;
-background-size: 200% auto;
-}
-.gradient-button:hover {
-background-position: right center;
-transform: translateY(-2px);
-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-.calendly-container {
-max-width: 800px;
-margin: 0 auto;
-background-color: #ffffff;
-padding: 2rem;
-border-radius: 1rem;
-box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
-&lt;/style>
-&lt;/head>
-&lt;body>
-
-<nav class="bg-white shadow-sm py-4 sticky top-0 z-50">
-    <div class="container mx-auto px-4 flex justify-between items-center">
-        <a href="#home" class="rounded-md p-1 hover:bg-gray-50 transition-colors">
-            <img src="logo.png" onerror="this.onerror=null;this.src='[https://placehold.co/150x60/8B5CF6/FFFFFF?text=Paws+Logo](https://placehold.co/150x60/8B5CF6/FFFFFF?text=Paws+Logo)';" alt="Pawsitively Pampered Logo" class="h-16 w-auto">
-        </a>
-        <ul class="hidden md:flex space-x-8">
-            <li><a href="#services" class="text-lg text-gray-600 hover:text-purple-700 font-medium transition-colors">Services</a></li>
-            <li><a href="#about" class="text-lg text-gray-600 hover:text-purple-700 font-medium transition-colors">About Us</a></li>
-            <li><a href="#pricing" class="text-lg text-gray-600 hover:text-purple-700 font-medium transition-colors">Pricing</a></li>
-            <li><a href="#contact" class="text-lg text-gray-600 hover:text-purple-700 font-medium transition-colors">Book Now</a></li>
-        </ul>
-        <button id="mobile-menu-button" class="md:hidden p-2 text-gray-600 hover:text-purple-700 focus:outline-none">
-            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-        </button>
-    </div>
-    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-white z-50 flex flex-col items-center justify-center p-8">
-        <button id="close-mobile-menu" class="absolute top-4 right-4 p-2 text-gray-600 hover:text-purple-700 focus:outline-none">
-            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-        </button>
-        <ul class="flex flex-col space-y-6 text-center">
-            <li><a href="#services" class="text-2xl text-gray-800 hover:text-purple-700 font-medium transition-colors mobile-link">Services</a></li>
-            <li><a href="#about" class="text-2xl text-gray-800 hover:text-purple-700 font-medium transition-colors mobile-link">About Us</a></li>
-            <li><a href="#pricing" class="text-2xl text-gray-800 hover:text-purple-700 font-medium transition-colors mobile-link">Pricing</a></li>
-            <li><a href="#contact" class="text-2xl text-gray-800 hover:text-purple-700 font-medium transition-colors mobile-link">Book Now</a></li>
-        </ul>
-    </div>
-</nav>
-
-<header id="home" class="hero-background text-white py-20 md:py-32 text-center rounded-b-3xl shadow-lg">
-    <div class="container mx-auto px-4 hero-content">
-        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 animate-fade-in-down">
-            Pawsitively Pampered <br> Where Every Pet is a VIP
-        </h1>
-        <p class="text-xl md:text-2xl mb-8 opacity-90 animate-fade-in-up">
-            Professional, gentle, and loving grooming services for dogs and cats of all breeds.
-            Serving [Your City] with a passion for pets.
-        </p>
-        <a href="#contact" class="gradient-button text-white font-semibold text-lg px-10 py-4 rounded-full shadow-lg hover:scale-105 transition transform duration-300">
-            Book an Appointment Now
-        </a>
-    </div>
-</header>
-
-<section id="services" class="py-16 md:py-24 bg-white">
-    <div class="container mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">Our Grooming Services</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-gray-50 p-8 rounded-xl shadow-md text-center transform hover:scale-105 transition duration-300">
-                <img src="happydog.png" alt="Dog Grooming" class="mx-auto w-32 h-32 rounded-full mb-6">
-                <h3 class="text-2xl font-semibold mb-4 text-gray-800">Full Dog Grooming</h3>
-                <p class="text-gray-600">
-                    Includes bath, blow-dry, brush-out, haircut, nail trim, ear cleaning, and paw pad trim. Tailored to your dog's breed and needs.
-                </p>
-            </div>
-            <div class="bg-gray-50 p-8 rounded-xl shadow-md text-center transform hover:scale-105 transition duration-300">
-                <img src="cat.png" alt="Cat Grooming" class="mx-auto w-32 h-32 rounded-full mb-6">
-                <h3 class="text-2xl font-semibold mb-4 text-gray-800">Gentle Cat Grooming</h3>
-                <p class="text-gray-600">
-                    Stress-free bathing, brushing, mat removal, lion cuts, and nail trims for our feline friends. Patient and calm approach guaranteed.
-                </p>
-            </div>
-            <div class="bg-gray-50 p-8 rounded-xl shadow-md text-center transform hover:scale-105 transition duration-300">
-                <img src="brush.png" alt="Bath & Brush" class="mx-auto w-32 h-32 rounded-full mb-6">
-                <h3 class="text-2xl font-semibold mb-4 text-gray-800">Bath & Brush Package</h3>
-                <p class="text-gray-600">
-                    Perfect for in-between full grooms! Includes deep cleansing shampoo, conditioning, thorough blow-dry, and de-shedding brush.
-                </p>
-            </div>
+    <nav class="bg-white shadow-sm py-4 sticky top-0 z-50">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="#home" class="rounded-md p-1 hover:bg-gray-50 transition-colors">
+                <img src="logo.png" onerror="this.onerror=null;this.src='https://placehold.co/150x60/8B5CF6/FFFFFF?text=Paws+Logo';" alt="Pawsitively Pampered Logo" class="h-16 w-auto">
+            </a>
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="#services" class="text-lg text-gray-600 hover:text-purple-700 font-medium transition-colors">Services</a></li>
+                <li><a href="#about" class="text-lg text-gray-600 hover:text-purple-700 font-medium transition-colors">About Us</a></li>
+                <li><a href="#pricing" class="text-lg text-gray-600 hover:text-purple-700 font-medium transition-colors">Pricing</a></li>
+                <li><a href="#gallery-dogs" class="text-lg text-gray-600 hover:text-purple-700 font-medium transition-colors">Gallery</a></li>
+                <li><a href="#team" class="text-lg text-gray-600 hover:text-purple-700 font-medium transition-colors">Team</a></li>
+                <li><a href="#contact" class="text-lg text-gray-600 hover:text-purple-700 font-medium transition-colors">Book Now</a></li>
+            </ul>
+            <button id="mobile-menu-button" class="md:hidden p-2 text-gray-600 hover:text-purple-700 focus:outline-none">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
         </div>
-    </div>
-</section>
-
-<section id="about" class="py-16 md:py-24 bg-gray-100">
-    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
-        <div class="md:w-1/2">
-            <img src="petgroomer.png" alt="Happy Pet" class="rounded-xl shadow-lg w-full h-auto">
+        <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-white z-50 flex flex-col items-center justify-center p-8">
+            <button id="close-mobile-menu" class="absolute top-4 right-4 p-2 text-gray-600 hover:text-purple-700 focus:outline-none">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <ul class="flex flex-col space-y-6 text-center">
+                <li><a href="#services" class="text-2xl text-gray-800 hover:text-purple-700 font-medium transition-colors mobile-link">Services</a></li>
+                <li><a href="#about" class="text-2xl text-gray-800 hover:text-purple-700 font-medium transition-colors mobile-link">About Us</a></li>
+                <li><a href="#pricing" class="text-2xl text-gray-800 hover:text-purple-700 font-medium transition-colors mobile-link">Pricing</a></li>
+                <li><a href="#gallery-dogs" class="text-2xl text-gray-800 hover:text-purple-700 font-medium transition-colors mobile-link">Gallery</a></li>
+                <li><a href="#team" class="text-2xl text-gray-800 hover:text-purple-700 font-medium transition-colors mobile-link">Team</a></li>
+                <li><a href="#contact" class="text-2xl text-gray-800 hover:text-purple-700 font-medium transition-colors mobile-link">Book Now</a></li>
+            </ul>
         </div>
-        <div class="md:w-1/2 text-center md:text-left">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">About Pawsitively Pampered</h2>
-            <p class="text-lg text-gray-700 mb-4">
-                At Pawsitively Pampered, we treat every pet with the love and respect they deserve. Our experienced groomers use only high-quality, pet-safe products and gentle techniques to ensure a comfortable and enjoyable grooming experience.
-            </p>
-            <p class="text-lg text-gray-700">
-                We believe in building lasting relationships with our furry clients and their owners, providing personalized care that meets the unique needs of each animal. Your pet's well-being and happiness are our top priorities!
-            </p>
-        </div>
-    </div>
-</section>
+    </nav>
 
-<section id="pricing" class="py-16 md:py-24 bg-white">
-    <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-gray-900">Transparent Pricing</h2>
-        <p class="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-            Our prices vary based on breed, size, coat condition, and specific services requested. Here's a general guide:
-        </p>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-gray-50 p-8 rounded-xl shadow-md transform hover:scale-105 transition duration-300">
-                <h3 class="text-2xl font-semibold mb-4 text-purple-700">Small Dogs</h3>
-                <p class="text-4xl font-bold text-gray-900 mb-4">Starting at $65</p>
-                <ul class="text-gray-600 list-disc list-inside text-left mx-auto max-w-[200px]">
-                    <li>Full Groom / Bath & Brush</li>
-                    <li>Nail Trim</li>
-                    <li>Ear Cleaning</li>
-                </ul>
-            </div>
-            <div class="bg-gray-50 p-8 rounded-xl shadow-md transform hover:scale-105 transition duration-300">
-                <h3 class="text-2xl font-semibold mb-4 text-purple-700">Medium Dogs</h3>
-                <p class="text-4xl font-bold text-gray-900 mb-4">Starting at $85</p>
-                <ul class="text-gray-600 list-disc list-inside text-left mx-auto max-w-[200px]">
-                    <li>Full Groom / Bath & Brush</li>
-                    <li>Nail Trim & File</li>
-                    <li>Ear Cleaning</li>
-                    <li>Paw Pad Trim</li>
-                </ul>
-            </div>
-            <div class="bg-gray-50 p-8 rounded-xl shadow-md transform hover:scale-105 transition duration-300">
-                <h3 class="text-2xl font-semibold mb-4 text-purple-700">Large Dogs & Cats</h3>
-                <p class="text-4xl font-bold text-gray-900 mb-4">Starting at $100</p>
-                <ul class="text-gray-600 list-disc list-inside text-left mx-auto max-w-[200px]">
-                    <li>Full Groom / Bath & Brush</li>
-                    <li>Nail Trim & File</li>
-                    <li>Ear Cleaning & Plucking</li>
-                    <li>Anal Gland Expression</li>
-                </ul>
-            </div>
-        </div>
-        <p class="text-sm text-gray-500 mt-8">
-            *Prices are estimates. Final price determined after assessment of pet's coat condition and temperament.
-        </p>
-    </div>
-</section>
-
-<section id="gallery-dogs" class="py-16 md:py-24 bg-gray-100">
-    <div class="container mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">Our Happy Clients - Dogs</h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
-            <img src="dummy_textpic.png" alt="Gallery Image 1" class="w-full rounded-md shadow-md">
-            <img src="dummy_textpic.png" alt="Gallery Image 2" class="w-full rounded-md shadow-md">
-            <img src="dummy_textpic.png" alt="Gallery Image 3" class="w-full rounded-md shadow-md">
-            <img src="dummy_textpic.png" alt="Gallery Image 4" class="w-full rounded-md shadow-md">
-            <img src="dummy_textpic.png" alt="Gallery Image 5" class="w-full rounded-md shadow-md">
-            <img src="dummy_textpic.png" alt="Gallery Image 6" class="w-full rounded-md shadow-md">
-            <img src="dummy_textpic.png" alt="Gallery Image 7" class="w-full rounded-md shadow-md">
-        </div>
-    </div>
-</section>
-
-<section id="gallery-cats" class="py-16 md:py-24 bg-white">
-    <div class="container mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">Our Happy Clients - Cats</h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
-            <img src="dummy_textpic.png" alt="Gallery Image 8" class="w-full rounded-md shadow-md">
-            <img src="dummy_textpic.png" alt="Gallery Image 9" class="w-full rounded-md shadow-md">
-            <img src="dummy_textpic.png" alt="Gallery Image 10" class="w-full rounded-md shadow-md">
-            <img src="dummy_textpic.png" alt="Gallery Image 11" class="w-full rounded-md shadow-md">
-            <img src="dummy_textpic.png" alt="Gallery Image 12" class="w-full rounded-md shadow-md">
-            <img src="dummy_textpic.png" alt="Gallery Image 13" class="w-full rounded-md shadow-md">
-            <img src="dummy_textpic.png" alt="Gallery Image 14" class="w-full rounded-md shadow-md">
-        </div>
-    </div>
-</section>
-
-<section id="pet-details-form" class="py-16 md:py-24 bg-gray-100">
-    <div class="container mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">Tell Us About Your Pet</h2>
-        <div class="calendly-container">
-            <iframe
-                id="JotFormIFrame-251676299898180"
-                title="Pet Details Form"
-                onload="window.parent.scrollTo(0,0)"
-                allowtransparency="true"
-                allowfullscreen="true"
-                style="min-width: 100%; height:305px; border:none;"
-                src="[https://form.jotform.com/251676299898180](https://form.jotform.com/251676299898180)">
-            </iframe>
-            <script type="text/javascript">
-                var ifr = document.getElementById("JotFormIFrame-251676299898180");
-                if (ifr) {
-                    var src = ifr.src;
-                    var iframeParams = [];
-                    if (window.location.href && window.location.href.indexOf("?") > -1) {
-                        iframeParams = iframeParams.concat(window.location.href.substring(window.location.href.indexOf("?") + 1).split('&'));
-                    }
-                    if (src && src.indexOf("?") > -1) {
-                        iframeParams = iframeParams.concat(src.substring(src.indexOf("?") + 1).split("&"));
-                        src = src.substring(0, src.indexOf("?"))
-                    }
-                    iframeParams.push("isIframeEmbed=1");
-                    ifr.src = src + "?" + iframeParams.join('&');
-                }
-                window.handleIFrameMessage = function(e) {
-                    var args = e.data.split(":");
-                    var iframe = document.getElementById("JotFormIFrame-251676299898180");
-                    if (!iframe)
-                        return;
-                    switch (args.length) {
-                        case 2:
-                            iframe.style.height = (parseInt(args[(1)]) + 20) + "px";
-                            break;
-                        case 3:
-                            if (args[(1)] == "reloadIframe" && args[(2)] == "true")
-                                iframe.src = iframe.src;
-                            else if (args[(1)] == "scrollToTop" && args[(2)] == "true")
-                                window.scrollTo(0, 0);
-                            break;
-                    }
-                    var isJotForm = (e.origin.indexOf("jotform") > -1) ? true : false;
-                    if (isJotForm && typeof window.JF_PAGE !== "undefined" && JF_PAGE.length > 1) {
-                        window.scrollTo(0, 0);
-                    }
-                };
-                if (window.addEventListener) {
-                    window.addEventListener("message", handleIFrameMessage, false);
-                } else if (window.attachEvent) {
-                    window.attachEvent("onmessage", handleIFrameMessage);
-                }
-            </script>
-        </div>
-    </div>
-</section>
-
-<section id="team" class="py-16 md:py-24 bg-white">
-    <div class="container mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">Meet Our Paw-some Team</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
-            <div class="text-center">
-                <img src="[https://placehold.co/150x150/8B5CF6/FFFFFF?text=Team+Member](https://placehold.co/150x150/8B5CF6/FFFFFF?text=Team+Member)" alt="Team Member 1" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md">
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">Alex Johnson</h3>
-                <p class="text-gray-600">Lead Groomer with 5+ years of experience in all breeds.</p>
-            </div>
-            <div class="text-center">
-                <img src="[https://placehold.co/150x150/8B5CF6/FFFFFF?text=Team+Member](https://placehold.co/150x150/8B5CF6/FFFFFF?text=Team+Member)" alt="Team Member 2" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md">
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">Sarah Williams</h3>
-                <p class="text-gray-600">Specializes in gentle cat grooming and has a calming touch.</p>
-            </div>
-            <div class="text-center">
-                <img src="[https://placehold.co/150x150/8B5CF6/FFFFFF?text=Team+Member](https://placehold.co/150x150/8B5CF6/FFFFFF?text=Team+Member)" alt="Team Member 3" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md">
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">Michael Brown</h3>
-                <p class="text-gray-600">Expert in dog haircuts and styling, passionate about pets.</p>
-            </div>
-            <div class="text-center">
-                <img src="[https://placehold.co/150x150/8B5CF6/FFFFFF?text=Team+Member](https://placehold.co/150x150/8B5CF6/FFFFFF?text=Team+Member)" alt="Team Member 4" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md">
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">Emily Davis</h3>
-                <p class="text-gray-600">Our friendly receptionist and grooming assistant.</p>
-            </div>
-            <div class="text-center">
-                <img src="[https://placehold.co/150x150/8B5CF6/FFFFFF?text=Team+Member](https://placehold.co/150x150/8B5CF6/FFFFFF?text=Team+Member)" alt="Team Member 5" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md">
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">David Garcia</h3>
-                <p class="text-gray-600">Provides bath and brush services, ensuring a clean and happy pet.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="contact" class="bg-purple-700 text-white py-16 md:py-24 text-center rounded-t-3xl shadow-lg">
-    <div class="container mx-auto px-4">
-        <h2 class="text-3xl md:text-5xl font-bold mb-6">Ready to Pamper Your Pet?</h2>
-        <p class="text-xl md:text-2xl mb-6 opacity-90">
-            Book a convenient grooming appointment online. We look forward to meeting you and your furry friend!
-        </p>
-
-        <div class="mb-8">
-            <p class="text-lg">Call Us: <a href="tel:+15551234567" class="text-white hover:text-purple-200 transition-colors">+1 (555) 123-4567</a></p>
-            <p class="text-lg">Email Us: <a href="mailto:info@pawspamper.com" class="text-white hover:text-purple-200 transition-colors">info@pawspamper.com</a></p>
-        </div>
-
-        <a href="[https://calendly.com](https://calendly.com)" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-700 font-bold py-3 px-8 rounded-full text-lg shadow transition mb-2">
-            <i class="fa fa-calendar-alt mr-2"></i>Book with Calendly
-        </a>
-    </div>
-</section>
-
-<footer class="bg-gray-800 text-white py-8 mt-0">
-    <div class="container mx-auto px-4 text-center">
-        <p>&copy; 2025 Pawsitively Pampered. All rights reserved. [Your City, State]</p>
-    </div>
-</footer>
-
-<script>
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const closeMobileMenuButton = document.getElementById('close-mobile-menu');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileLinks = document.querySelectorAll('.mobile-link');
-
-    mobileMenuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-        document.body.classList.toggle('overflow-hidden');
-    });
-
-    closeMobileMenuButton.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-        document.body.classList.remove('overflow-hidden');
-    });
-
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-            document.body.classList.remove('overflow-hidden');
-        });
-    });
-</script>
-&lt;/body>
-&lt;/html>
-
-
-
-
-
-
-
-
+    <header id="home" class="hero-background text-white py-20 md:py-32 text-center rounded-b-3xl shadow-lg">
+        <div class="container mx-auto px-4 hero-content">
+            <h1 class="text-4xl md
