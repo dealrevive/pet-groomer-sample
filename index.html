@@ -28,6 +28,64 @@
         .swiper-pagination-bullet-active { background: #6D28D9; }
     </style>
 </head>
+ <!-- Place this just before </body> to ensure your FAQ toggles work -->
+
+<script>
+  // Swiper initialization (already present in your code)
+  var studioSwiper = new Swiper('.studioSwiper', {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 24,
+    navigation: {
+      nextEl: '.studioSwiper .swiper-button-next',
+      prevEl: '.studioSwiper .swiper-button-prev',
+    },
+    pagination: {
+      el: '.studioSwiper .swiper-pagination',
+      clickable: true,
+    },
+    autoplay: { delay: 3500, disableOnInteraction: false },
+    breakpoints: {
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 }
+    }
+  });
+  var petSwiper = new Swiper('.petSwiper', {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 24,
+    navigation: {
+      nextEl: '.petSwiper .swiper-button-next',
+      prevEl: '.petSwiper .swiper-button-prev',
+    },
+    pagination: {
+      el: '.petSwiper .swiper-pagination',
+      clickable: true,
+    },
+    autoplay: { delay: 3500, disableOnInteraction: false },
+    breakpoints: {
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 4 }
+    }
+  });
+
+  // FAQ toggle logic (add this block!)
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.faq-question').forEach(function (question) {
+      question.addEventListener('click', function () {
+        const answer = this.parentElement.querySelector('.faq-answer');
+        const icon = this.querySelector('.faq-toggle');
+        if (answer.classList.contains('hidden')) {
+          answer.classList.remove('hidden');
+          icon.classList.add('transform', 'rotate-180');
+        } else {
+          answer.classList.add('hidden');
+          icon.classList.remove('transform', 'rotate-180');
+        }
+      });
+    });
+  });
+</script>   
 <body>
 
     <!-- Navbar -->
