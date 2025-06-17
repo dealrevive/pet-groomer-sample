@@ -30,9 +30,63 @@
     </style>
 </head>
 <body>
-    <!-- Navbar ... (no changes) -->
 
-    <!-- Hero Section ... (no changes) -->
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm py-4 sticky top-0 z-50">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <!-- Custom Logo Integration -->
+            <a href="#home" class="rounded-md p-1 hover:bg-gray-50 transition-colors">
+                <!-- REPLACE 'paws_logo.png' WITH THE ACTUAL FILENAME OF YOUR LOGO -->
+                <img src="logo.png" onerror="this.onerror=null;this.src='https://placehold.co/150x60/8B5CF6/FFFFFF?text=Paws+Logo';" alt="Pawsitively Pampered Logo" class="h-16 w-auto">
+            </a>
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="#services" class="text-lg text-gray-600 hover:text-purple-700 font-medium transition-colors">Services</a></li>
+                <li><a href="#about" class="text-lg text-gray-600 hover:text-purple-700 font-medium transition-colors">About Us</a></li>
+                <li><a href="#pricing" class="text-lg text-gray-600 hover:text-purple-700 font-medium transition-colors">Pricing</a></li>
+                <li><a href="#new-client" class="text-lg text-gray-600 hover:text-purple-700 font-medium transition-colors">New Client</a></li>
+                <li><a href="#gallery-studio" class="text-lg text-gray-600 hover:text-purple-700 font-medium transition-colors">Studio Gallery</a></li>
+                <li><a href="#gallery-dogs" class="text-lg text-gray-600 hover:text-purple-700 font-medium transition-colors">Pet Gallery</a></li>
+                <li><a href="#contact" class="text-lg text-gray-600 hover:text-purple-700 font-medium transition-colors">Book Now</a></li>
+            </ul>
+            <button id="mobile-menu-button" class="md:hidden p-2 text-gray-600 hover:text-purple-700 focus:outline-none">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-white z-50 flex flex-col items-center justify-center p-8">
+            <button id="close-mobile-menu" class="absolute top-4 right-4 p-2 text-gray-600 hover:text-purple-700 focus:outline-none">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <ul class="flex flex-col space-y-6 text-center">
+                <li><a href="#services" class="text-2xl text-gray-800 hover:text-purple-700 font-medium transition-colors mobile-link">Services</a></li>
+                <li><a href="#about" class="text-2xl text-gray-800 hover:text-purple-700 font-medium transition-colors mobile-link">About Us</a></li>
+                <li><a href="#pricing" class="text-2xl text-gray-800 hover:text-purple-700 font-medium transition-colors mobile-link">Pricing</a></li>
+                <li><a href="#new-client" class="text-2xl text-gray-800 hover:text-purple-700 font-medium transition-colors mobile-link">New Client</a></li>
+                <li><a href="#gallery-studio" class="text-2xl text-gray-800 hover:text-purple-700 font-medium transition-colors mobile-link">Studio Gallery</a></li>
+                <li><a href="#gallery-dogs" class="text-2xl text-gray-800 hover:text-purple-700 font-medium transition-colors mobile-link">Pet Gallery</a></li>
+                <li><a href="#contact" class="text-2xl text-gray-800 hover:text-purple-700 font-medium transition-colors mobile-link">Book Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section with CSS Pattern Background -->
+    <header id="home" class="hero-background text-white py-20 md:py-32 text-center rounded-b-3xl shadow-lg">
+        <div class="container mx-auto px-4 hero-content">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 animate-fade-in-down">
+                Pawsitively Pampered <br> Where Every Pet is a VIP
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-90 animate-fade-in-up">
+                Professional, gentle, and loving grooming services for dogs and cats of all breeds.
+                Serving [Your City] with a passion for pets.
+            </p>
+            <a href="#contact" class="gradient-button text-white font-semibold text-lg px-10 py-4 rounded-full shadow-lg hover:scale-105 transition transform duration-300">
+                Book an Appointment Now
+            </a>
+        </div>
+    </header>
 
     <!-- Services Section ... (no changes) -->
 
@@ -40,7 +94,24 @@
 
     <!-- Pricing Section ... (no changes) -->
 
-    <!-- New Client Registration Section ... (no changes) -->
+    <!-- New Client Registration Section with JotForm Embed -->
+    <section id="new-client" class="py-16 md:py-24 bg-purple-50">
+        <div class="container mx-auto px-4 max-w-2xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-purple-700">New Client Registration</h2>
+            <p class="mb-6 text-center text-gray-700 text-lg">
+                Welcome! Please fill out our new client registration form below to get started with your pet's grooming journey.
+            </p>
+            <div class="bg-white rounded-xl shadow-lg p-6 md:p-10">
+                <iframe
+                    title="New Client Registration"
+                    src="https://form.jotform.com/251676299898180"
+                    frameborder="0"
+                    style="width:100%; min-height:800px; border:none;"
+                    allowfullscreen
+                ></iframe>
+            </div>
+        </div>
+    </section>
 
     <!-- Photo Gallery: Studio Interior as Swiper Carousel -->
     <section id="gallery-studio" class="py-16 md:py-24 bg-white">
@@ -97,8 +168,6 @@
         </div>
       </div>
     </section>
-
-    <!-- Team Section ... (no changes) -->
 
     <!-- Contact Section ... (no changes) -->
 
